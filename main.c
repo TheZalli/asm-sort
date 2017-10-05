@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdint.h>
 
-// defined in sort.asm
-extern void sort(int64_t* arr, size_t length);
+// defined in sort.s
+__attribute__((sysv_abi))
+extern void sort(int64_t* array, size_t length);
 
 #ifndef ARRAY_LEN
 #define ARRAY_LEN 5
